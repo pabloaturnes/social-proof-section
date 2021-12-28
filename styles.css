@@ -1,0 +1,266 @@
+html{
+    box-sizing: border-box;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+}
+
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: top 0 left 0, bottom 0 right 0;
+}
+
+.container{
+    display: grid;
+    min-height: 85vh;
+    grid-template-columns: minmax(560px, 1fr) minmax(560px,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "main-text-container     stars-cards-container"
+                         "people-cards-container   people-cards-container";
+    margin: 3rem 8rem;
+                  
+}
+
+
+.main-text-container{
+    grid-area: main-text-container;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.main-text-container h1{
+    font-size: 3rem;
+    color: hsl(300, 43%, 22%);
+    text-align: start;
+    padding-right: 12rem;
+}
+
+.main-text-container p{
+    color: hsl(303, 10%, 53%);
+    text-align: start;
+    margin-top: 0.5rem;
+    line-height: 1.5rem;
+    padding-right: 6.5rem;
+    font-weight: 500;
+}
+
+.stars-cards-container{
+    grid-area: stars-cards-container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 2.5rem;
+    flex-wrap: wrap;
+    
+}
+
+.stars-cards-container p{
+    color: hsl(300, 43%, 22%);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.first-star-card, .second-star-card, .third-star-card{
+    display: flex;
+    background-color: hsl(300, 24%, 96%);
+    width: 30rem;
+    height: 4rem;
+    align-items: center;
+    border-radius: 0.5rem;
+    
+}
+
+.first-star-card{
+    align-self: flex-start;
+}
+
+.second-star-card{
+    align-self: center;
+}
+
+.third-star-card{
+    align-self: flex-end;
+}
+
+.stars{
+    margin: 0 2rem;
+}
+
+.people-cards-container{
+    grid-area: people-cards-container;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.first-column{
+    justify-content: flex-start;
+}
+
+.second-column{
+    justify-content: center;
+}
+
+.third-column{
+    justify-content: flex-end;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsl(300, 43%, 22%);
+    padding: 2rem 1.7rem 2rem 2rem;
+    border-radius: 0.5rem;
+    text-align: start;
+}
+
+.people-card-header{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.people-card-header img{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.people-card-header-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.people-card-header h2{
+    color: hsl(0, 0%, 100%);
+    font-size: 0.9rem;
+}
+
+.people-card-header-name p{
+    color: hsl(333, 80%, 67%);
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+}
+
+
+
+.people-card-body p{
+    color: hsl(0, 0%, 100%);
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+
+
+@media (min-width:992px) and (max-width:1200px){
+
+ html{
+     font-size: 13.5px;
+ }
+
+ .container{
+    margin: 3rem 2.5rem;
+    grid-template-columns: minmax(450px, 1fr) minmax(450px,1fr);
+ }
+}
+
+
+@media (min-width:769px) and (max-width:990px){
+    
+    html{
+        font-size: 12.5px;
+    }
+
+    body{
+        background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
+    }
+   
+    .container{
+       margin: 3rem 2.5rem;
+       grid-template-columns: minmax(350px, 1fr) minmax(350px,1fr);
+    }
+
+    .main-text-container h1{
+
+        padding-right: 6rem;
+    }
+
+}
+
+
+@media  (max-width:768px){
+
+    html{
+        font-size: 13.5px;
+    }
+
+    body{
+        background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
+    }
+
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: "main-text-container" 
+                            "stars-cards-container"
+                            "people-cards-container"   
+                            "people-cards-container";
+
+        margin: 1.5rem;
+     }
+    
+     .main-text-container h1{
+         text-align: center;
+         padding: 0;
+     }
+
+     .main-text-container p{
+         text-align: center;
+         padding: 0;
+     }
+
+    .stars-cards-container{
+        padding: 0;
+        justify-content: space-around;
+        
+        
+    }
+
+    .first-star-card, .second-star-card, .third-star-card{
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .people-cards-container{
+        flex-wrap: wrap;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+}
